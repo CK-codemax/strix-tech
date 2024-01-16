@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .link{
+        @apply text-gray-700 hover:text-[#28d0e7] transition-colors duration-300 ease-in-out;
+    }
+}

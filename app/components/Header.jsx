@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header>
+    <header className="border-b border-gray-300 pb-4">
     {/*Top*/}
 
     <div className="bg-[#28d0e7] w-screen h-[50px] flex items-center justify-between px-4 text-white">

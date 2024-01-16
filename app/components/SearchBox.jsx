@@ -7,7 +7,7 @@ export default function SearchBox() {
     <form className="flex items-center space-x-3 overflow-hidden border border-gray-400 rounded-full h-[47px] w-[470px] pl-6">
         <label  for='category' className="flex items-center space-x-2 pr-2 border-r border-gray-400 cursor-pointer h-full">
         <select className="outline-none text-center text-gray-700 text-[14px]" name="category" id="category">
-            <option selected value="all">All Categories</option> 
+            <option value="all">All Categories</option> 
             <option value="chargers">Chargers</option> 
             <option value="smartphones">Smartphones</option> 
             <option value="iphones">iPhones</option>            
