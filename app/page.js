@@ -1,11 +1,12 @@
 import Image from "next/image";
 import SideBar from "./components/SideBar";
-import SlideShow from "./SlideShow";
+import Products from "./components/Products";
+import SlideShow from "./components/SlideShow";
 
 
 export default function page() {
-  return (
-    <div className="flex space-x-7 w-full items-start px-7">
+  return (<>
+   <div className="flex space-x-7 w-full items-start px-7">
       <SideBar />
      
      <SlideShow />
@@ -24,5 +25,8 @@ export default function page() {
        
         </div>
     </div>
+     <Products />
+  </>
+   
   )
 }
