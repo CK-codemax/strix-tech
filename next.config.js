@@ -7,6 +7,12 @@ const nextConfig = {
             hostname: 'strix.com.ng',
             port: '',
           },
+
+          {
+            protocol: 'https',
+            hostname: 'fdn2.gsmarena.com',
+            port: '',
+          },
         ],
       },
 }

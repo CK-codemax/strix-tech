@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProductList from "./ProductList";
 
 export default function Products() {
   return (
@@ -20,6 +21,7 @@ export default function Products() {
 
             </div>
         </div>
+        <ProductList />
     </div>
   )
 }

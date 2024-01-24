@@ -2,6 +2,7 @@ import Image from "next/image";
 import SideBar from "./components/SideBar";
 import Products from "./components/Products";
 import SlideShow from "./components/SlideShow";
+import Loader from "./components/Loader";
 
 
 export default function page() {
@@ -25,6 +26,7 @@ export default function page() {
        
         </div>
     </div>
+    <Loader />
      <Products />
   </>
    
