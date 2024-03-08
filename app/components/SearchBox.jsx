@@ -19,15 +19,7 @@ export default function SearchBox() {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className=" hidden lg:flex items-center space-x-3 overflow-hidden border border-gray-400 rounded-full h-[47px] w-[470px] pl-6">
-        {/* <label  for='category' className="flex items-center space-x-2 pr-2 border-r border-gray-400 cursor-pointer h-full">
-        <select className="outline-none text-center text-gray-700 text-[14px]" name="category" id="category">
-            <option value="all">All Categories</option> 
-            <option value="chargers">Chargers</option> 
-            <option value="smartphones">Smartphones</option> 
-            <option value="iphones">iPhones</option>            
-        </select>
-        </label> */}
+    <form onSubmit={(e) => handleSubmit(e)} className=" hidden lg:flex items-center space-x-3 overflow-hidden border border-gray-400 rounded-full h-[47px] lg:w-[470px] pl-6">
         <p className="flex items-center text-center text-gray-700 text-[14px] space-x-2 pr-2 border-r border-gray-400 cursor-pointer h-full">All Categories</p>
         <input onChange={(e) => setQuery(e.target.value)} value={query} className="border-none outline-none text-gray-700 flex-grow h-full text-[14px] placeholder:text-gray-700" type='text' placeholder="Search Our Catalogue"/>
         <button onClick={(e) => handleSubmit(e)} className="bg-[#28d0e7] h-full w-[70px] hover:bg-gray-800 transition-colors duration-400 ease-in-out flex items-center justify-center">

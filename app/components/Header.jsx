@@ -7,20 +7,21 @@ import Image from "next/image";
 import SearchBox from "./SearchBox";
 import Link from "next/link";
 import { HiBars3, HiBars3BottomRight, HiMiniBars3, HiOutlineShoppingBag } from "react-icons/hi2";
+import SmallSearchBox from "./SmallSearchBox";
 
 
 export default function Header() {
   return (
-    <header className="border-b sticky top-0 z-50 bg-white border-gray-300 pb-4">
+    <header className="border-b sticky top-0 z-50 mb-3 bg-white border-gray-300 pb-4">
   
     {/*Bottom*/}
 
         <div className="lg:pl-[60px] pt-[10px] px-4 flex bg-white items-center justify-between">
 
-              <div className="flex lg:hidden space-x-3 items-center">
+              <div className="flex lg:hidden space-x-3 items-start">
                 <HiBars3 className="text-[30px] lg:hidden text-gray-800"/>
 
-              <CiSearch className="text-[30px] lg:hidden text-gray-800" />
+                <SmallSearchBox />
               </div>
 
             <Link href={'/'}> 
