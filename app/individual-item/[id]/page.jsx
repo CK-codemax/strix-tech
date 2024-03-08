@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '@/app/components/Header';
 import IndividualProduct from '@/app/components/IndividualProduct';
 import Nav from '@/app/components/Nav';
+import Footer from '@/app/components/Footer';
 
 const gsmarena = require('gsmarena-api');
 
@@ -17,6 +18,7 @@ export default async function page({params : {id = null}}) {
        <div className='flex w-full items-start justify-center'>
           <IndividualProduct device={device} />
        </div>
+       <Footer />
     </div>
   )
 }
