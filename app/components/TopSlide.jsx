@@ -12,10 +12,10 @@ export default function TopSlide() {
 
     <div className="hidden xl:flex space-y-5 flex-col">
 
-    <div className="w-full lg:max-w-[330px] mt-8 overflow-hidden">
+    <div className="w-full xl:min-w-[280px] mt-8 overflow-hidden">
         <Image className="w-full hover:scale-110 transition duration-500 cursor-pointer object-cover h-auto rounded-md" src={'https://strix.com.ng/e/image/catalog/phones.jpg'} alt='home-image' width={855} height={559}/>
         </div>
-        <div className="w-full lg:max-w-[330px] overflow-hidden">
+        <div className="w-full xl:min-w-[280px] overflow-hidden">
         <Image className="w-full h-auto hover:scale-110 transition duration-500 cursor-pointer object-cover rounded-md" src={'https://strix.com.ng/e/image/catalog/IMG_2440.jpeg'} alt='home-image' width={554} height={554}/>
         </div>
 
