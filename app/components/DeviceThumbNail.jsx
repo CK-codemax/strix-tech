@@ -3,10 +3,10 @@ import Link from "next/link";
 import { FaEye, FaRegHeart } from "react-icons/fa";
 import { PiCellSignalFullBold, PiShoppingCartBold } from "react-icons/pi";
 
-export default function DeviceThumbNail({name, id, src, description}) {
+export default function DeviceThumbNail({name, id, src}) {
 
   return (
-    <Link className="cursor-pointer border border-gray-500 rounded-lg px-1 py-2" href={'/'}>
+    <Link className="cursor-pointer border border-gray-500 rounded-lg px-1 py-2" href={`/individual-item/${id}`}>
         <Image className="w-[400px] rounded-md" src={src} width={500} height={300} alt={`${name}-image`} />
         <p className="text-center text-wrap">{name}</p>
         <div className="mx-auto flex w-full items-center space-x-2">
@@ -28,6 +28,7 @@ export default function DeviceThumbNail({name, id, src, description}) {
           
 
         </div>
+        {/* <p className="text-center text-wrap">{device.name}</p> */}
     </Link>
   )
 }
