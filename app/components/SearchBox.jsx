@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 
 export default function SearchBox() {
   return (
-    <form className="flex items-center space-x-3 overflow-hidden border border-gray-400 rounded-full h-[47px] w-[470px] pl-6">
+    <form className=" hidden lg:flex items-center space-x-3 overflow-hidden border border-gray-400 rounded-full h-[47px] w-[470px] pl-6">
         <label  for='category' className="flex items-center space-x-2 pr-2 border-r border-gray-400 cursor-pointer h-full">
         <select className="outline-none text-center text-gray-700 text-[14px]" name="category" id="category">
             <option value="all">All Categories</option> 

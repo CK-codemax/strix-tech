@@ -4,9 +4,9 @@ import { TfiEmail } from "react-icons/tfi";
 
 export default function Nav() {
   return (
-    <div className="flex justify-between items-center px-8 border-b border-gray-300 h-[55px]">
+    <div className="hidden lg:flex justify-between items-center lg:px-3 xl:px-8 border-b border-gray-300 h-[55px]">
 
-        <div className="bg-[#28d0e7] h-full flex group items-center space-x-3 text-white cursor-pointer w-[239px] rounded-md pl-5">
+        <div className="bg-[#28d0e7] h-full flex group items-center space-x-3 text-white cursor-pointer w-[239px] xl:w-[263px] rounded-md pl-5">
             <HiMiniBars3BottomLeft className="text-2xl group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             <p className="tracking-widest">Categories</p>
         </div>
