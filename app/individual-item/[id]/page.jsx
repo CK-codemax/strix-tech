@@ -11,13 +11,13 @@ export default async function page({params : {id = null}}) {
     const device = await gsmarena.catalog.getDevice(id)
 
   return (
-    <>
+    <div>
        <Header />
        <Nav />
-       <div className='flex w-full h-screen items-start justify-center'>
+       <div className='flex w-full items-start justify-center'>
           <IndividualProduct device={device} />
        </div>
-    </>
+    </div>
   )
 }
 
