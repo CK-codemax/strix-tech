@@ -13,11 +13,11 @@ export default function Products() {
                 </div>
             </div>
             <div className="flex space-x-6">
-                <Link className="text-gray-700 hover:text-[#28d0e7] underline decoration-[#28d0e7]" href={'/'}>New Arrivals</Link>
-                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/'}>iPhones</Link>
-                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/'}>Samsung</Link>
-                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/'}>iPads</Link>
-                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/'}>Oraimo</Link>
+                <Link className="text-gray-700 hover:text-[#28d0e7] underline decoration-[#28d0e7]" href={'/'}>Catalogue</Link>
+                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/search/iphone'}>iPhones</Link>
+                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/search/samsung'}>Samsung</Link>
+                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/search/ipad'}>iPads</Link>
+                <Link className="text-gray-700 hover:text-[#28d0e7]" href={'/search/google'}>Google</Link>
 
             </div>
         </div>
