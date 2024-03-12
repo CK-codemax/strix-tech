@@ -10,13 +10,14 @@ const gsmarena = require('gsmarena-api');
 export default async function page({params : {id = null}}) {
 
     const device = await gsmarena.catalog.getDevice(id)
+    const apple = await gsmarena.catalog.getBrand('apple-phones-48');
 
   return (
     <div>
        <Header />
        <Nav />
        <div className='flex w-full items-start justify-center'>
-          <IndividualProduct device={device} />
+          <IndividualProduct device={device} apple={apple} />
        </div>
        <Footer />
     </div>

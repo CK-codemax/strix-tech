@@ -1,3 +1,4 @@
+'use client'
 import { FaFacebookF, FaTwitter, FaGooglePlusG, FaPinterest, FaInstagram, FaChevronDown } from "react-icons/fa";
 import { TfiYoutube } from "react-icons/tfi";
 import { CiHeart, CiSearch } from "react-icons/ci";
@@ -8,9 +9,13 @@ import SearchBox from "./SearchBox";
 import Link from "next/link";
 import { HiBars3, HiBars3BottomRight, HiMiniBars3, HiOutlineShoppingBag } from "react-icons/hi2";
 import SmallSearchBox from "./SmallSearchBox";
+import { useSelector } from "react-redux";
 
 
 export default function Header() {
+  const storeCart = useSelector(state => state.cart)
+  
+  const cart = storeCart.cart
   return (
     <header className="border-b sticky top-0 z-50 mb-3 bg-white border-gray-300 pb-4">
   
@@ -46,7 +51,7 @@ export default function Header() {
                     <PiShoppingCartThin  className="text-[50px] text-[#28d0e7]" />
                     <div className="flex flex-col items-start">
                          <p className="font-[500]">Your Cart</p>
-                         <p className="text-[14px]">0 item</p>
+                         <p className="text-[14px]">{cart.length} {cart.length > 1 ? 'items' : 'item'}</p>
                     </div>
                 </div>
 
