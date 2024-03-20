@@ -5,6 +5,7 @@ import SideBar from "./SideBar"
 import RelatedList from "./RelatedList"
 import { useDispatch, useSelector } from "react-redux"
 import { addItem, decreaseItemQuantity, increaseItemQuantity } from "../redux/cartSlice"
+import { addItem as addToWish, deleteItem } from "../redux/wishListSlice"
 import { GoPlus } from "react-icons/go";
 import { RxMinus } from "react-icons/rx";
 
@@ -14,9 +15,14 @@ export default function IndividualProduct({device, apple}) {
 
     
   const storeCart = useSelector(state => state.cart)
+
   
   const cart = storeCart.cart
+
+  const storeWishList = useSelector(state => state.wishList)
+  const wishList = storeWishList.wishList;
   const productInCart = cart?.find((cartItem) => cartItem.id === device.img + device.name)
+  const productInWishList = wishList?.find((wishListItem) => wishListItem.id === device.img + device.name)
 
   
  const newDeal  = {
@@ -24,9 +30,10 @@ export default function IndividualProduct({device, apple}) {
   id : `${device.img}${device.name}`,
   quickSpec : device.quickSpec,
   price : 500,
-  date : new Date(),
+  date : new Date().toISOString(),
   quantity : 1,
 };
+
 
   
   const dispatch = useDispatch()
@@ -43,9 +50,17 @@ export default function IndividualProduct({device, apple}) {
     dispatch(decreaseItemQuantity(device.img + device.name))
 }
 
+function handleAddToWishList(){
+  dispatch(addToWish(newDeal))
+}
+
+function handleRemoveFromWishList(){
+  dispatch(deleteItem(device.img + device.name))
+}
+
 console.log(cart)
   return (
-    <div className="w-full flex justify-start space-x-3 items-start px-3 xl:px-7">
+    <div className="w-full lg:flex lg:justify-start lg:space-x-3 lg:items-start px-3 xl:px-7">
         <div className="hidden lg:flex flex-col space-y-6">
            <SideBar />
            {/* <RelatedDevices /> */}
@@ -155,22 +170,32 @@ console.log(cart)
        </p>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center justify-center space-y-3">
           {!productInCart ? (
 
             <button onClick={handleAddToCart} className="w-[300px] text-nowrap capitalize px-4 py-2 rounded-md text-white bg-[#28d0e7] ">
             add to cart
           </button>) : (
             <div className="flex space-x-3 items-center">
-              <RxMinus onClick={handleDecreaseQuantity} className="text-[28px] text-white p-2 rounded-full bg-[#28d0e7] " />
+              <RxMinus onClick={handleDecreaseQuantity} className="text-[28px] text-white p-2 rounded-full cursor-pointer bg-[#28d0e7] " />
               <p className="text-black">{productInCart.quantity}</p>
 
 
-              <GoPlus onClick={handleIncreaseQuantity} className="text-[28px] text-white p-2 rounded-full bg-[#28d0e7] " />
+              <GoPlus onClick={handleIncreaseQuantity} className="text-[28px] text-white p-2 rounded-full cursor-pointer bg-[#28d0e7] " />
 
 
             </div>
             )}
+
+     {!productInWishList ? (
+      <button onClick={handleAddToWishList} className="w-[300px] text-nowrap capitalize px-4 py-2 rounded-md text-white bg-[#28d0e7] ">
+      add to wishList
+    </button>
+     ) : (
+      <button onClick={handleRemoveFromWishList} className="w-[300px] text-nowrap capitalize px-4 py-2 rounded-md text-white bg-[#28d0e7] ">
+            remove from wishList
+          </button>
+     )}
         </div>
     </div>
   )

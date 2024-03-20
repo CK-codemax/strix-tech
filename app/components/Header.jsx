@@ -14,8 +14,9 @@ import { useSelector } from "react-redux";
 
 export default function Header() {
   const storeCart = useSelector(state => state.cart)
-  
-  const cart = storeCart.cart
+  const cart = storeCart.cart;
+  const storeWishList = useSelector(state => state.wishList)
+  const wishList = storeWishList.wishList;
   return (
     <header className="border-b sticky top-0 z-50 mb-3 bg-white border-gray-300 pb-4">
   
@@ -41,7 +42,7 @@ export default function Header() {
                     <CiHeart  className="text-[50px] text-[#28d0e7]" />
                     <div className="flex flex-col items-start">
                          <p className="font-[500]">WishList</p>
-                         <p className="text-[14px]">0 items</p>
+                         <p className="text-[14px]">{wishList.length} {wishList.length > 1 ? 'items' : 'item'}</p>
                     </div>
                 </div>
                 <HiBars3BottomRight className="text-[30px] lg:hidden text-gray-800"/>
