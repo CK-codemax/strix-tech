@@ -60,28 +60,7 @@ function handleRemoveFromWishList(){
 }
 async function createCheckoutSession() {
   // Send data to API route 
-  const res = await fetch(`/api/paystack-checkout`, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          email: "whoroochuko@gmail.com",
-          amount: "300000",
-      })
-  });
-
-  // Check if the request was successful
-  if (!res.ok) {
-      throw new Error(`HTTP error status: ${res.status}`);
-  }
-
-  const result = await res.json();
-  console.log(result);
-
-  // Redirect to the authorization URL
-  window.location.href = result.data.authorization_url;
-  
+console.log("buying")
 }
 
 
