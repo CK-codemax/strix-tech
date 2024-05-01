@@ -8,6 +8,7 @@ import { addItem, decreaseItemQuantity, increaseItemQuantity } from "../redux/ca
 import { addItem as addToWish, deleteItem } from "../redux/wishListSlice"
 import { GoPlus } from "react-icons/go";
 import { RxMinus } from "react-icons/rx";
+import { redirect } from "next/navigation"
 
 
 export default function IndividualProduct({device, apple}) {
@@ -57,6 +58,32 @@ function handleAddToWishList(){
 function handleRemoveFromWishList(){
   dispatch(deleteItem(device.img + device.name))
 }
+async function createCheckoutSession() {
+  // Send data to API route 
+  const res = await fetch(`/api/paystack-checkout`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          email: "whoroochuko@gmail.com",
+          amount: "300000",
+      })
+  });
+
+  // Check if the request was successful
+  if (!res.ok) {
+      throw new Error(`HTTP error status: ${res.status}`);
+  }
+
+  const result = await res.json();
+  console.log(result);
+
+  // Redirect to the authorization URL
+  window.location.href = result.data.authorization_url;
+  
+}
+
 
 console.log(cart)
   return (
@@ -196,6 +223,10 @@ console.log(cart)
             remove from wishList
           </button>
      )}
+
+<button onClick={createCheckoutSession} className="w-[300px] text-nowrap capitalize px-4 py-2 rounded-md text-white bg-[#28d0e7] ">
+            Push to paystack
+          </button>
         </div>
     </div>
   )
