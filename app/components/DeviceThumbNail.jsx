@@ -6,7 +6,7 @@ import { PiCellSignalFullBold, PiShoppingCartBold } from "react-icons/pi";
 export default function DeviceThumbNail({name, id, src}) {
 
   return (
-    <Link className="cursor-pointer group border border-gray-500 rounded-lg px-1 py-2" href={`/individual-item/${id}`}>
+    <Link className="cursor-pointer group border border-gray-500 rounded-lg px-1 py-2 min-w-[150px]" href={`/individual-item/${id}`}>
         <Image className="w-[400px] rounded-md" src={src} width={500} height={300} alt={`${name}-image`} />
         <p className="text-center text-wrap">{name}</p>
         <div className="mx-auto flex w-full items-center space-x-2">
